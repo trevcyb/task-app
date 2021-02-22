@@ -8,6 +8,8 @@ class App extends Component {
     this.state = {
       task: "",
       tasks: [],
+      tasknos: [],
+      taskno: 0,
     };
   }
 
@@ -22,6 +24,14 @@ class App extends Component {
     this.setState({
       tasks: this.state.tasks.concat(this.state.task),
       task: "",
+      tasknos: this.state.tasknos.concat(this.state.taskno + 1),
+    });
+  };
+
+  deleteTask = (e) => {
+    e.preventDefault();
+    this.setState({
+      tasks: this.state.tasks.splice(this.state.tasks, 1),
     });
   };
 

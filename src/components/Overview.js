@@ -6,8 +6,12 @@ const Overview = (props) => {
 
     return (
         <ul>
-            {tasks.map((task) => {
-                return <li key={uniqid()}>{task}</li>;
+            {tasks.map((task, taskno) => {
+                return(
+                    <li key={uniqid()}>{taskno}{task}
+                    <button type="button" key={uniqid()}>Delete Task</button>
+                    </li>
+                )
             })}
         </ul>
     );
